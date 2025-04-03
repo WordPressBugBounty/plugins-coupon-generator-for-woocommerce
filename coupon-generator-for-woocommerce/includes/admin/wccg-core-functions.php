@@ -88,6 +88,8 @@ function wccg_generate_coupons( $number, $args = array() ) {
 		'maximum_amount'             => wc_format_decimal( $args['maximum_amount'] ),
 		'customer_email'             => array_filter( array_map( 'trim', explode( ',', wc_clean( $args['customer_email'] ) ) ) ),
 		'usage_count'                => 0,
+		'product_brands'             => isset( $args['product_brands'] ) ? array_map( 'intval', $args['product_brands'] ) : array(),
+		'exclude_product_brands'     => isset( $args['exclude_product_brands'] ) ? array_map( 'intval', $args['exclude_product_brands'] ) : array(),
 	), $coupon_id = null, $args ); // $coupon_id is deprecated as its not useful
 
 
@@ -229,7 +231,7 @@ function wccg_export_coupons() {
 
 	$quantity = absint( $_GET['quantity'] );
 	$results = $wpdb->get_results(
-		$wpdb->prepare( "SELECT post_title FROM $wpdb->posts WHERE post_type='shop_coupon' ORDER BY post_date DESC LIMIT 0, %d", $quantity )
+		$wpdb->prepare( "SELECT post_title FROM $wpdb->posts WHERE post_type='shop_coupon' AND post_status='publish' ORDER BY post_date DESC LIMIT 0, %d", $quantity )
 	);
 
 	$codes = wp_list_pluck( $results, 'post_title' );

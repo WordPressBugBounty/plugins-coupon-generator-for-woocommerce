@@ -1,10 +1,10 @@
 === Coupon Generator for WooCommerce ===
 Contributors: sormano
-Tags: woocommerce coupon generator, woocommerce, woocommerce coupon, coupons, coupon importer, woocommerce automatic coupons, woocommerce random coupons
+Tags: woocommerce coupon generator, woocommerce coupon, coupons, coupon importer, bulk coupons
 Requires at least: 4.0.0
 Tested up to: 6.7
-Stable tag: 1.2.0
-Requires PHP: 5.6
+Stable tag: 1.3.0
+Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -31,7 +31,7 @@ If you have a feature request, let me know, they're always welcome!
 
 == Installation ==
 
-1. Upload the folder `woocommerce-coupon-generator to the `/wp-content/plugins/` directory.
+1. Upload the folder `woocommerce-coupon-generator to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to the generation page and start generating :-)
 
@@ -45,6 +45,11 @@ If you have a feature request, let me know, they're always welcome!
 
 
 == Changelog ==
+
+= 1.3.0 - 2025/04/03 =
+
+* [Add] - Support for WooCommerce Brands feature
+* [Fix] - PHP 8 warning
 
 = 1.2.0 - 2021/05/26 =
 
